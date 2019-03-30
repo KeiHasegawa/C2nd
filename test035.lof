@@ -1,0 +1,2 @@
+getbits(0x1234,15,8) = 0x12
+getbits(0x9abcdef0,27,16) = 0xabcd

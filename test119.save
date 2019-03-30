@@ -1,0 +1,230 @@
+	.text
+	.global _addpoint
+_addpoint:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$44, %esp
+/*
+var1 -8(%ebp) 
+var0 -4(%ebp) 
+var2 -12(%ebp) 
+p1 12(%ebp) 
+p2 20(%ebp) 
+addpoint _addpoint 
+var3 -16(%ebp) 
+var4 -20(%ebp) 
+var5 -24(%ebp) 
+var6 -28(%ebp) 
+4 $4 $4 
+var7 -32(%ebp) 
+var8 -36(%ebp) 
+var9 -40(%ebp) 
+*/
+	leal	20(%ebp), %eax
+	movl	%eax, %ebx
+	movl	(%ebx), %ebx
+	leal	12(%ebp), %ecx
+	movl	%ecx, %edx
+	movl	(%edx), %edx
+	addl	%ebx, %edx
+	movl	%edx, (%ecx)
+	movl	$4, %esi
+	leal	20(%ebp), %edi
+	addl	%esi, %edi
+	movl	%edi, -24(%ebp)
+	movl	-24(%ebp), %edi
+	movl	(%edi), %edi
+	movl	$4, -32(%ebp)
+	movl	%edi, -28(%ebp)
+	leal	12(%ebp), %edi
+	addl	-32(%ebp), %edi
+	movl	%edi, -36(%ebp)
+	movl	-36(%ebp), %edi
+	movl	(%edi), %edi
+	addl	-28(%ebp), %edi
+	movl	%esi, -20(%ebp)
+	movl	-36(%ebp), %esi
+	movl	%edi, (%esi)
+	movl	%eax, -4(%ebp)
+	movl	%ebx, -8(%ebp)
+	movl	%ecx, -12(%ebp)
+	movl	%edx, -16(%ebp)
+	movl	%esi, -36(%ebp)
+	movl	%edi, -40(%ebp)
+	pushl	$8
+	leal	12(%ebp), %eax
+	pushl	%eax
+	pushl	8(%ebp)
+	call	_memcpy
+	jmp	_addpointend11
+_addpointend11:
+	leave
+	ret
+string40:
+	.ascii	"(%d,%d) + (%d,%d) = (%d,%d)\n\0"
+	.global _main
+_main:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$168, %esp
+/*
+var1 -8(%ebp) 
+var0 -4(%ebp) 
+var2 -12(%ebp) 
+p1 12(%ebp) 
+p2 20(%ebp) 
+addpoint _addpoint 
+var3 -16(%ebp) 
+var4 -20(%ebp) 
+var5 -24(%ebp) 
+var6 -28(%ebp) 
+4 $4 $4 
+var7 -32(%ebp) 
+var8 -36(%ebp) 
+var9 -40(%ebp) 
+var13 -28(%ebp) 
+main _main 
+12 $12 $12 
+34 $34 $34 
+a -8(%ebp) 
+var14 -32(%ebp) 
+var15 -36(%ebp) 
+var16 -40(%ebp) 
+4U $4 $4 
+56 $56 $56 
+78 $78 $78 
+b -16(%ebp) 
+var17 -44(%ebp) 
+var18 -48(%ebp) 
+var19 -52(%ebp) 
+c -24(%ebp) 
+var20 -56(%ebp) 
+var21 -64(%ebp) 
+var22 -68(%ebp) 
+"(%d,%d) + (%d,%d) = (%d,%d)\n" string40 
+0 $0 $0 
+var23 -72(%ebp) 
+printf _printf _printf 
+var24 -76(%ebp) 
+var25 -80(%ebp) 
+var26 -84(%ebp) 
+var27 -88(%ebp) 
+var28 -92(%ebp) 
+4 $4 $4 
+var29 -96(%ebp) 
+var30 -100(%ebp) 
+var31 -104(%ebp) 
+var32 -108(%ebp) 
+var33 -112(%ebp) 
+var34 -116(%ebp) 
+var35 -120(%ebp) 
+var36 -124(%ebp) 
+var37 -128(%ebp) 
+var38 -132(%ebp) 
+*/
+	leal	-8(%ebp), %eax
+	movl	$12, %ebx
+	movl	%ebx, (%eax)
+	movl	%eax, %ecx
+	addl	$4, %ecx
+	movl	$34, %edx
+	movl	%edx, (%ecx)
+	leal	-16(%ebp), %esi
+	movl	$56, %edi
+	movl	%edi, (%esi)
+	movl	%esi, -48(%ebp)
+	addl	$4, -48(%ebp)
+	movl	$78, %edi
+	movl	%esi, -40(%ebp)
+	movl	%esi, -44(%ebp)
+	movl	-48(%ebp), %esi
+	movl	%edi, (%esi)
+	leal	-24(%ebp), %edi
+	movl	%edi, -52(%ebp)
+	leal	_addpoint, %edi
+	movl	%eax, -28(%ebp)
+	movl	%eax, -32(%ebp)
+	movl	%ecx, -36(%ebp)
+	movl	%esi, -48(%ebp)
+	movl	%edi, -56(%ebp)
+	leal	4(%esp), %ebx	
+	pushl	$8
+	leal	-8(%ebp), %eax
+	pushl	%eax
+	pushl	%ebx
+	call	_memcpy
+	addl	$12, %esp
+	leal	12(%esp), %ebx	
+	pushl	$8
+	leal	-16(%ebp), %eax
+	pushl	%eax
+	pushl	%ebx
+	call	_memcpy
+	addl	$12, %esp	
+	leal	-64(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_addpoint
+	pushl	$8
+	leal	-64(%ebp), %eax
+	pushl	%eax
+	movl	-52(%ebp), %ebx
+	pushl	%ebx
+	call	_memcpy
+	leal	_printf, %eax
+	leal	-8(%ebp), %ebx
+	movl	%ebx, %ecx
+	movl	(%ecx), %ecx
+	movl	$4, %edx
+	leal	-8(%ebp), %esi
+	addl	%edx, %esi
+	movl	%esi, %edi
+	movl	(%edi), %edi
+	movl	%edi, -92(%ebp)
+	leal	-16(%ebp), %edi
+	movl	%edi, -96(%ebp)
+	movl	-96(%ebp), %edi
+	movl	(%edi), %edi
+	movl	$4, -104(%ebp)
+	movl	%edi, -100(%ebp)
+	leal	-16(%ebp), %edi
+	addl	-104(%ebp), %edi
+	movl	%edi, -108(%ebp)
+	movl	-108(%ebp), %edi
+	movl	(%edi), %edi
+	movl	%edi, -112(%ebp)
+	leal	-24(%ebp), %edi
+	movl	%edi, -116(%ebp)
+	movl	-116(%ebp), %edi
+	movl	(%edi), %edi
+	movl	$4, -124(%ebp)
+	movl	%edi, -120(%ebp)
+	leal	-24(%ebp), %edi
+	addl	-124(%ebp), %edi
+	movl	%edi, -128(%ebp)
+	movl	-128(%ebp), %edi
+	movl	(%edi), %edi
+	movl	$string40, 0(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edi, -132(%ebp)
+	movl	-92(%ebp), %edi
+	movl	%edi, 8(%esp)
+	movl	-100(%ebp), %edi
+	movl	%edi, 12(%esp)
+	movl	-112(%ebp), %edi
+	movl	%edi, 16(%esp)
+	movl	-120(%ebp), %edi
+	movl	%edi, 20(%esp)
+	movl	-132(%ebp), %edi
+	movl	%edi, 24(%esp)
+	movl	%eax, -68(%ebp)
+	movl	%ebx, -76(%ebp)
+	movl	%ecx, -80(%ebp)
+	movl	%edx, -84(%ebp)
+	movl	%esi, -88(%ebp)
+	call	_printf
+	movl	%eax, -72(%ebp)
+	movl	$0, %eax
+	jmp	_mainend41
+_mainend41:
+	leave
+	ret

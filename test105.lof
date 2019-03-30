@@ -1,0 +1,9 @@
+int my_getline(char *line, int max);
+int main(int argc, char* argv[])
+  int found = 0;
+    printf("Usage: find pattern\n");
+	printf("%s", line);
+  printf("found = %d\n",found);
+int my_getline(char s[], int lim)
+  int c, i;
+found = 8

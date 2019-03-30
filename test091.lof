@@ -1,0 +1,3 @@
+strcmp(hasegawa,hasegawa kei) = -32
+strcmp(hasegawa,hasegawa) = 0
+strcmp(hasegawA,hasegawa) = -32

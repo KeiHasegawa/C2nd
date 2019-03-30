@@ -1,0 +1,125 @@
+#include <stdio.h>
+#include <string.h>
+#include "syscalls.h"
+#include <fcntl.h>		/* 読み書きのフラグ */
+#include <sys/types.h>	/* typdef 群 */
+#include <sys/stat.h> 	/* stat が返す構造体 */
+
+void fsize(char *);
+
+/* ファイルの大きさを印字する */
+main(int argc, char* argv[])
+{
+  if (argc == 1)		/* 標準値: 現用ディレクトリ */
+    fsize(".");
+  else
+    while (--argc > 0)
+      fsize(*++argv);
+  return 0;
+}
+
+void dirwalk(char *, void (*fcn)(char *));
+
+/* fsize: ファイル "name" のサイズを印字する */
+void fsize(char *name)
+{
+  struct stat stbuf;
+
+  if (stat(name, &stbuf) == -1) {
+    fprintf(stderr, "fsize: can't access %s\n", name);
+    return;
+  }
+  if ((stbuf.st_mode & S_IFMT) == S_IFDIR)
+    dirwalk(name, fsize);
+  printf("%ld %s\n", stbuf.st_size, name);
+}
+
+#define MAX_PATH 1024
+
+#define NAME_MAX	14		/* 最長のファイル名要素 */
+					/* システムに依存 */
+
+typedef struct {			/* 移植可能なディレクトリ項目 */
+  long ino;			/* inode 番号 */
+  char name[NAME_MAX+1];	/* 名前 + '\0' 終端子 */
+} Dirent;
+
+typedef struct {		/* 最小の DIR: バッファリングなし等 */
+  int fd;			/* ディレクトリのファイル記述子 */
+  Dirent d;			/* ディレクトリ項目 */
+} DIR;
+
+DIR* opendir(char *dirname);
+Dirent *readdir(DIR *dfd);
+void closedir(DIR *dfd);
+
+/* dirwalk: dir 中のすべてのファイルに fcn を適用する */
+void dirwalk(char *dir, void (*fcn)(char *))
+{
+  char name[MAX_PATH];
+  Dirent *dp;
+  DIR *dfd;
+
+  if ((dfd = opendir(dir)) == NULL) {
+    fprintf(stderr, "dirwalk: can't open %s\n", dir);
+    return;
+  }
+  while ((dp = readdir(dfd)) != NULL) {
+    if (strcmp(dp->name, ".") == 0
+	|| strcmp(dp->name, "..") == 0)
+      continue;			/* skip self and parent */
+    if (strlen(dir)+strlen(dp->name)+2 > sizeof(name))
+      fprintf(stderr, "dirwalk: name %s/%s too long\n",
+	      dir, dp->name);
+    else {
+      sprintf(name, "%s/%s", dir, dp->name);
+      (*fcn)(name);
+    }
+  }
+  closedir(dfd);
+}
+
+/* opendir: readdir 呼び出しのなめにディレクトリをオープンする */
+DIR *opendir(char *dirname)
+{
+  int fd;
+  struct stat stbuf;
+  DIR *dp;
+
+  if ((fd = open(dirname, O_RDONLY, 0)) == -1
+      || fstat(fd, (struct stat*)&stbuf) == -1
+      || (stbuf.st_mode & S_IFMT) != S_IFDIR
+      || (dp = (DIR *)malloc(sizeof(DIR))) == NULL)
+    return NULL;
+  dp->fd = fd;
+  return dp;
+}
+
+/* closedir: opendir によってオープンされたディレクトリを閉じる */
+void closedir(DIR *dp)
+{
+  if (dp) {
+    close(dp->fd);
+    free(dp);
+  }
+}
+
+#include <sys/dirent.h>		/* ローカルなディレクトリ構造体 */
+
+/* Readdir: ディレクトリ項目を順次に読む */
+Dirent *readdir(DIR *dp)
+{
+  struct dirent dirbuf;		/* ローカルなディレクトリ構造体 */
+  static Dirent d;			/* 戻り値: ポータブルな構造体 */
+
+  while (read(dp->fd, (char *)&dirbuf, sizeof(dirbuf))
+	 == sizeof(dirbuf)) {
+    if (dirbuf.d_ino == 0)	/* 使われていないスロット */
+      continue;
+    d.ino = dirbuf.d_ino;
+    strncpy(d.name, dirbuf.d_name, sizeof dirbuf.d_name);
+    d.name[sizeof dirbuf.d_name - 1] = '\0';	/* 終了を保証する */
+    return &d;
+  }
+  return NULL;
+}

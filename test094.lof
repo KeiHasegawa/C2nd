@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      line[len-1] = '\0';	/* 改行を消す */
+      lineptr[nlines++] = p;
+      return -1;
+      strcpy(p, line);
+      strcpy_s(p, len, line);
+      swap(v, ++last, i);
+    ++i;
+    Qsort(lineptr, 0, nlines-1);
+    allocp += n;
+    else {
+    if (nlines >= maxlines || (p = alloc(len)) == NULL)
+    if (strcmp(v[i],v[left]) < 0)
+    printf("%s\n", lineptr[i]);
+    printf("error: input too big to sort\n");
+    return 0;
+    return 0;
+    return 1;
+    return allocp - n;    /* 古い p */
+    return;             /* 含むときは何もしない */
+    s[i] = c;
+    s[i] = c;
+    writelines(lineptr, nlines);
+    }
+  Qsort(v, last+1, right);
+  Qsort(v, left, last-1);
+  char *p, line[MAXLEN];
+  char* temp;
+  for (i = 0; i < nlines; i++)
+  for (i = left+1; i <= right; i++)    /* 分割 */
+  for (i=0; i<lim-1 && (c=getchar())!= EOF && c!='\n'; ++i)
+  if ((nlines = readlines(lineptr, MAXLINES)) >= 0) {
+  if (allocbuf + ALLOCSIZE - allocp >= n) { /* 入りきる */
+  if (c == '\n') {
+  if (left >= right)    /* 配列が 2 より少ない要素を */
+  int c, i;
+  int i, last;
+  int i;
+  int len, nlines;
+  int nlines;    /* 読み込まれた入力行の数 */
+  last = left;                      /* v[0] に移動 */
+  nlines = 0;
+  return i;
+  return nlines;
+  s[i] = '\0';
+  swap(v, left, (left + right)/2);  /* 分割要素を */
+  swap(v, left, last);              /* 分割要素を回復 */
+  temp = v[i];
+  v[i] = v[j];
+  v[j] = temp;
+  void swap(char *v[], int i, int j);
+  while ((len = my_getline(line,MAXLEN)) > 0)
+  }
+  }
+  } else    /* 十分な空きがないとき */
+  } else {
+#define ALLOCSIZE 10000		/* 使用可能な場所の大きさ */
+#define MAXLEN 1000		/* 任意の入力行の最大長 */
+#define MAXLINES 5000		/* ソートすべき最大の行数 */
+#else // _MSC_VER
+#endif // _MSC_VER
+#ifndef _MSC_VER
+#include <stdio.h>
+#include <string.h>
+/* Qsort: v[left]...v[right] を上昇順にソートする */
+/* my_getline: s に行を入れ, 長さを返す */
+/* readlines: 入力行を読み込む */
+/* swap: v[i] と v[j] を交換する */
+/* writelines: 出力行を書き出す */
+/* 入力行をソートする */
+char *alloc(int n)		/* n 文字へのポインタを返す */
+char *alloc(int);
+char* lineptr[MAXLINES];	/* テキスト行へのポインタ */
+int main()
+int my_getline(char *, int);
+int my_getline(char s[], int lim)
+int readlines(char *lineptr[], int maxlines)
+int readlines(char *lineptr[], int nlines);
+static char *allocp = allocbuf;	/* 次の空き位置 */
+static char allocbuf[ALLOCSIZE];     /* alloc のための記憶場所 */
+void Qsort(char *lineptr[], int left, int right);
+void Qsort(char *v[], int left, int right)
+void swap(char *v[], int i, int j)
+void writelines(char *lineptr[], int nlines)
+void writelines(char *lineptr[], int nlines);
+{
+{
+{
+{
+{
+{
+{
+}
+}
+}
+}
+}
+}
+}

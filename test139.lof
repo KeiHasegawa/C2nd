@@ -1,0 +1,8 @@
+valid: 1/2/1970
+
+valid: 25 Dec 1988
+
+invalid: hogehoge
+
+valid: 25/12/2004
+

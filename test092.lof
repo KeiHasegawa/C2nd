@@ -1,0 +1,3 @@
+strcmp(hasegawa,hase) = 103
+strcmp(hasegawa,hasegawa) = 0
+strcmp(hasegaaw,hasegawa) = -22

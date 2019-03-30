@@ -1,0 +1,6 @@
+100 mymalloc call begin
+100 mymalloc call end
+60 myfree call begin
+60 free call end
+40 myfree call begin
+40 myfree call end

@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml-stylesheet type="text/xsl" href="item.xsl"?>
+
+<test_item>
+
+<item>
+    <source>test000.c</source>
+    <abstract>7</abstract>
+</item>
+
+<item>
+    <source>test001.c</source>
+    <abstract>11</abstract>
+</item>
+
+<item>
+    <source>test002.c</source>
+    <abstract>14</abstract>
+</item>
+
+<item>
+    <source>test003.c</source>
+    <abstract>14</abstract>
+</item>
+
+<item>
+    <source>test004.c</source>
+    <abstract>16</abstract>
+</item>
+
+<item>
+    <source>test005.c</source>
+    <abstract>18</abstract>
+</item>
+
+<item>
+    <source>test006.c</source>
+    <abstract>20</abstract>
+</item>
+
+<item>
+    <source>test007.c</source>
+    <abstract>21</abstract>
+</item>
+
+<item>
+    <source>test008.c</source>
+    <abstract>22</abstract>
+</item>
+
+<item>
+    <source>test009.c</source>
+    <abstract>23</abstract>
+</item>
+
+<item>
+    <source>test010.c</source>
+    <abstract>24</abstract>
+</item>
+
+<item>
+    <source>test011.c</source>
+    <abstract>25</abstract>
+</item>
+
+<item>
+    <source>test012.c</source>
+    <abstract>27</abstract>
+</item>
+
+<item>
+    <source>test013.c</source>
+    <abstract>30</abstract>
+</item>
+
+<item>
+    <source>test014.c</source>
+    <abstract>33</abstract>
+</item>
+
+<item>
+    <source>test015.c</source>
+    <abstract>34</abstract>
+</item>
+
+<item>
+    <source>test016.c</source>
+    <abstract>36</abstract>
+</item>
+
+<item>
+    <source>test017.c</source>
+    <abstract>37</abstract>
+</item>
+
+<item>
+    <source>test018.c</source>
+    <abstract>48</abstract>
+</item>
+
+<item>
+    <source>test019.c</source>
+    <abstract>48</abstract>
+</item>
+
+<item>
+    <source>test020.c</source>
+    <abstract>48</abstract>
+</item>
+
+<item>
+    <source>test021.c</source>
+    <abstract>48</abstract>
+</item>
+
+<item>
+    <source>test022.c</source>
+    <abstract>49</abstract>
+</item>
+
+<item>
+    <source>test023.c</source>
+    <abstract>50</abstract>
+</item>
+
+<item>
+    <source>test024.c</source>
+    <abstract>50</abstract>
+</item>
+
+<item>
+    <source>test025.c</source>
+    <abstract>50</abstract>
+</item>
+
+<item>
+    <source>test026.c</source>
+    <abstract>52</abstract>
+</item>
+
+<item>
+    <source>tset027.c</source>
+    <abstract>53</abstract>
+</item>
+
+<item>
+    <source>test028.c</source>
+    <abstract>54</abstract>
+</item>
+
+<item>
+    <source>test029.c</source>
+    <abstract>55</abstract>
+</item>
+
+<item>
+    <source>test030.c</source>
+    <abstract>56</abstract>
+</item>
+
+<item>
+    <source>test031.c</source>
+    <abstract>57</abstract>
+</item>
+
+<item>
+    <source>test032.c</source>
+    <abstract>57</abstract>
+</item>
+
+<item>
+    <source>test033.c</source>
+    <abstract>58</abstract>
+</item>
+
+<item>
+    <source>test034.c</source>
+    <abstract>59</abstract>
+</item>
+
+<item>
+    <source>test035.c</source>
+    <abstract>61</abstract>
+</item>
+
+<item>
+    <source>test036.c</source>
+    <abstract>62</abstract>
+</item>
+
+<item>
+    <source>test037.c</source>
+    <abstract>63</abstract>
+</item>
+
+<item>
+    <source>test038.c</source>
+    <abstract>68</abstract>
+</item>
+
+<item>
+    <source>test039.c</source>
+    <abstract>68</abstract>
+</item>
+
+<item>
+    <source>test040.c</source>
+    <abstract>70</abstract>
+</item>
+
+<item>
+    <source>test041.c</source>
+    <abstract>71</abstract>
+</item>
+
+<item>
+    <source>test042.c</source>
+    <abstract>75</abstract>
+</item>
+
+<item>
+    <source>test043.c</source>
+    <abstract>75</abstract>
+</item>
+
+<item>
+    <source>test044.c</source>
+    <abstract>76</abstract>
+</item>
+
+<item>
+    <source>test045.c</source>
+    <abstract>76</abstract>
+</item>
+
+<item>
+    <source>test046.c</source>
+    <abstract>77</abstract>
+</item>
+
+<item>
+    <source>test047.c</source>
+    <abstract>78</abstract>
+</item>
+
+<item>
+    <source>test048.c</source>
+    <abstract>79</abstract>
+</item>
+
+<item>
+    <source>test049.c</source>
+    <abstract>80</abstract>
+</item>
+
+<item>
+    <source>test050.c</source>
+    <abstract>84</abstract>
+</item>
+
+<item>
+    <source>test051.c</source>
+    <abstract>87</abstract>
+</item>
+
+<item>
+    <source>test052.c</source>
+    <abstract>88</abstract>
+</item>
+
+<item>
+    <source>test053.c</source>
+    <abstract>89</abstract>
+</item>
+
+<item>
+    <source>test054.c</source>
+    <abstract>92</abstract>
+</item>
+
+<item>
+    <source>test055.c</source>
+    <abstract>103</abstract>
+</item>
+
+<item>
+    <source>test056.c</source>
+    <abstract>103</abstract>
+</item>
+
+<item>
+    <source>test057.c</source>
+    <abstract>104</abstract>
+</item>
+
+<item>
+    <source>test058.c</source>
+    <abstract>104</abstract>
+</item>
+
+<item>
+    <source>test059.c</source>
+    <abstract>104</abstract>
+</item>
+
+<item>
+    <source>test060.c</source>
+    <abstract>104</abstract>
+</item>
+
+<item>
+    <source>test061.c</source>
+    <abstract>104</abstract>
+</item>
+
+<item>
+    <source>test062.c</source>
+    <abstract>105</abstract>
+</item>
+
+<item>
+    <source>test063.c</source>
+    <abstract>105</abstract>
+</item>
+
+<item>
+    <source>test064.c</source>
+    <abstract>106</abstract>
+</item>
+
+<item>
+    <source>test065.c</source>
+    <abstract>109</abstract>
+</item>
+
+<item>
+    <source>test066.c</source>
+    <abstract>109</abstract>
+</item>
+
+<item>
+    <source>test067.c</source>
+    <abstract>109</abstract>
+</item>
+
+<item>
+    <source>test068.c</source>
+    <abstract>109</abstract>
+</item>
+
+<item>
+    <source>test069.c</source>
+    <abstract>110</abstract>
+</item>
+
+<item>
+    <source>test070.c</source>
+    <abstract>110</abstract>
+</item>
+
+<item>
+    <source>test071.c</source>
+    <abstract>110</abstract>
+</item>
+
+<item>
+    <source>test072.c</source>
+    <abstract>111</abstract>
+</item>
+
+<item>
+    <source>test073.c</source>
+    <abstract>112</abstract>
+</item>
+
+<item>
+    <source>test074.c</source>
+    <abstract>114</abstract>
+</item>
+
+<item>
+    <source>test075.c</source>
+    <abstract>115</abstract>
+</item>
+
+<item>
+    <source>test076.c</source>
+    <abstract>116</abstract>
+</item>
+
+<item>
+    <source>test077.c</source>
+    <abstract>116</abstract>
+</item>
+
+<item>
+    <source>test078.c</source>
+    <abstract>116</abstract>
+</item>
+
+<item>
+    <source>test079.c</source>
+    <abstract>117</abstract>
+</item>
+
+<item>
+    <source>test080.c</source>
+    <abstract>119</abstract>
+</item>
+
+<item>
+    <source>test081.c</source>
+    <abstract>121</abstract>
+</item>
+
+<item>
+    <source>test082.c</source>
+    <abstract>122</abstract>
+</item>
+
+<item>
+    <source>test083.c</source>
+    <abstract>123</abstract>
+</item>
+
+<item>
+    <source>test084.c</source>
+    <abstract>125</abstract>
+</item>
+
+<item>
+    <source>test085.c</source>
+    <abstract>126</abstract>
+</item>
+
+<item>
+    <source>test086.c</source>
+    <abstract>127</abstract>
+</item>
+
+<item>
+    <source>test087.c</source>
+    <abstract>128</abstract>
+</item>
+
+<item>
+    <source>test088.c</source>
+    <abstract>128</abstract>
+</item>
+
+<item>
+    <source>test089.c</source>
+    <abstract>129</abstract>
+</item>
+
+<item>
+    <source>test090.c</source>
+    <abstract>129</abstract>
+</item>
+
+<item>
+    <source>test091.c</source>
+    <abstract>129</abstract>
+</item>
+
+<item>
+    <source>test092.c</source>
+    <abstract>130</abstract>
+</item>
+
+<item>
+    <source>test093.c</source>
+    <abstract>130</abstract>
+</item>
+
+<item>
+    <source>test094.c</source>
+    <abstract>132</abstract>
+</item>
+
+<item>
+    <source>test095.c</source>
+    <abstract>133</abstract>
+</item>
+
+<item>
+    <source>test096.c</source>
+    <abstract>135</abstract>
+</item>
+
+<item>
+    <source>test097.c</source>
+    <abstract>136</abstract>
+</item>
+
+<item>
+    <source>test098.c</source>
+    <abstract>137</abstract>
+</item>
+
+<item>
+    <source>test099.c</source>
+    <abstract>137</abstract>
+</item>
+
+<item>
+    <source>test100.c</source>
+    <abstract>137</abstract>
+</item>
+
+<item>
+    <source>test101.c</source>
+    <abstract>138</abstract>
+</item>
+
+<item>
+    <source>test102.c</source>
+    <abstract>140</abstract>
+</item>
+
+<item>
+    <source>test103.c</source>
+    <abstract>140</abstract>
+</item>
+
+<item>
+    <source>test104.c</source>
+    <abstract>141</abstract>
+</item>
+
+<item>
+    <source>test105.c</source>
+    <abstract>141</abstract>
+</item>
+
+<item>
+    <source>test106.c</source>
+    <abstract>142</abstract>
+</item>
+
+<item>
+    <source>test107.c</source>
+    <abstract>145</abstract>
+</item>
+
+<item>
+    <source>test108.c</source>
+    <abstract>150</abstract>
+</item>
+
+<item>
+    <source>test109.c</source>
+    <abstract>153</abstract>
+</item>
+
+<item>
+    <source>test110.c</source>
+    <abstract>155</abstract>
+</item>
+
+<item>
+    <source>test111.c</source>
+    <abstract>155</abstract>
+</item>
+
+<item>
+    <source>test112.c</source>
+    <abstract>156</abstract>
+</item>
+
+<item>
+    <source>test113.c</source>
+    <abstract>156</abstract>
+</item>
+
+<item>
+    <source>test114.c</source>
+    <abstract>156</abstract>
+</item>
+
+<item>
+    <source>test115.c</source>
+    <abstract>156</abstract>
+</item>
+
+<item>
+    <source>test116.c</source>
+    <abstract>156</abstract>
+</item>
+
+<item>
+    <source>test117.c</source>
+    <abstract>157</abstract>
+</item>
+
+<item>
+    <source>test118.c</source>
+    <abstract>157</abstract>
+</item>
+
+<item>
+    <source>test119.c</source>
+    <abstract>158</abstract>
+</item>
+
+<item>
+    <source>test120.c</source>
+    <abstract>158</abstract>
+</item>
+
+<item>
+    <source>test121.c</source>
+    <abstract>159</abstract>
+</item>
+
+<item>
+    <source>test122.c</source>
+    <abstract>159</abstract>
+</item>
+
+<item>
+    <source>test123.c</source>
+    <abstract>162</abstract>
+</item>
+
+<item>
+    <source>test124.c</source>
+    <abstract>164</abstract>
+</item>
+
+<item>
+    <source>test125.c</source>
+    <abstract>166</abstract>
+</item>
+
+<item>
+    <source>test126.c</source>
+    <abstract>170</abstract>
+</item>
+
+<item>
+    <source>test127.c</source>
+    <abstract>174</abstract>
+</item>
+
+<item>
+    <source>test128.c</source>
+    <abstract>175</abstract>
+</item>
+
+<item>
+    <source>test129.c</source>
+    <abstract>178</abstract>
+</item>
+
+<item>
+    <source>test130.c</source>
+    <abstract>179</abstract>
+</item>
+
+<item>
+    <source>test131.c</source>
+    <abstract>180</abstract>
+</item>
+
+<item>
+    <source>test132.c</source>
+    <abstract>181</abstract>
+</item>
+
+<item>
+    <source>test133.c</source>
+    <abstract>181</abstract>
+</item>
+
+<item>
+    <source>test134.c</source>
+    <abstract>182</abstract>
+</item>
+
+<item>
+    <source>test135.c</source>
+    <abstract>186</abstract>
+</item>
+
+<item>
+    <source>test136.c</source>
+    <abstract>190</abstract>
+</item>
+
+<item>
+    <source>test137.c</source>
+    <abstract>186</abstract>
+</item>
+
+<item>
+    <source>test138.c</source>
+    <abstract>193</abstract>
+</item>
+
+<item>
+    <source>test139.c</source>
+    <abstract>193</abstract>
+</item>
+
+<item>
+    <source>test140.c</source>
+    <abstract>197</abstract>
+</item>
+
+<item>
+    <source>test141.c</source>
+    <abstract>199</abstract>
+</item>
+
+<item>
+    <source>test142.c</source>
+    <abstract>201</abstract>
+</item>
+
+<item>
+    <source>test143.c</source>
+    <abstract>201</abstract>
+</item>
+
+<item>
+    <source>test144.c</source>
+    <abstract>208</abstract>
+</item>
+
+<item>
+    <source>test145.c</source>
+    <abstract>209</abstract>
+</item>
+
+<item>
+    <source>test146.c</source>
+    <abstract>209</abstract>
+</item>
+
+<item>
+    <source>test147.c</source>
+    <abstract>211</abstract>
+</item>
+
+<item>
+    <source>test148.c</source>
+    <abstract>214</abstract>
+</item>
+
+<item>
+    <source>test149.c</source>
+    <abstract>215</abstract>
+</item>
+
+<item>
+    <source>test150.c</source>
+    <abstract>221</abstract>
+</item>
+
+<item>
+    <source>test151.c</source>
+    <abstract>227</abstract>
+</item>
+
+</test_item>

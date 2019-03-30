@@ -1,0 +1,3 @@
+n = 30
+long pos, char* buf, int n)
+{

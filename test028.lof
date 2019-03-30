@@ -1,0 +1,4 @@
+lower('A') = a
+lower('a') = a
+lower('Z') = z
+lower('_') = _

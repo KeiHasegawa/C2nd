@@ -1,0 +1,85 @@
+#include <stdio.h>
+
+/* cat: ファイルの連結, 第1版 */
+int main(int argc, char* argv[])
+{
+  FILE *fp;
+  void filecopy(FILE *, FILE *);
+
+  if (argc == 1)		/* 引数なし; 標準入力をコピー */
+    filecopy(stdin, stdout);
+  else
+    while (--argc > 0)
+#ifndef _MSC_VER
+      if ((fp = fopen(*++argv, "r")) == NULL){
+#else // _MSC_VER
+      if ((fopen_s(&fp, *++argv, "r"), fp) == NULL){
+#endif // _MSC_VER
+	printf("cat: can't open %s\n", *argv);
+	return 1;
+      } else {
+	filecopy(fp, stdout);
+	fclose(fp);
+      }
+  
+  return 0;
+}
+
+/* filecopy: ファイル ifp をファイル ofp にコピー */
+void filecopy(FILE *ifp, FILE *ofp)
+{
+  int c;
+
+  while ((c = getc(ifp)) != EOF)
+    putc(c, ofp);
+}
+#include <stdio.h>
+
+int main()
+{
+  printf("hello, world\n");
+  return 0;
+}
+#include <stdio.h>
+
+/* fahr=0,20,...,300 に対して, 摂氏-華氏対応表
+   を印字する */
+int main()
+{
+  int fahr, celsius;
+  int lower, upper, step;
+
+  lower = 0;         /* 温度表の下限 */
+  upper = 300;       /* 上限 */
+  step = 20;         /* きざみ */
+
+  fahr = lower;
+  while (fahr <= upper) {
+    celsius = 5 * (fahr-32) / 9;
+    printf("%d\t%d\n", fahr, celsius);
+    fahr = fahr + step;
+  }
+  return 0;
+}
+#include <stdio.h>
+
+/* fahr=0,20,...,300 に対して, 摂氏-華氏対応表
+   を印字する */
+int main()
+{
+  int fahr, celsius;
+  int lower, upper, step;
+
+  lower = 0;         /* 温度表の下限 */
+  upper = 300;       /* 上限 */
+  step = 20;         /* きざみ */
+
+  fahr = lower;
+  while (fahr <= upper) {
+    celsius = 5 * (fahr-32) / 9;
+    printf("%3d %6d\n", fahr, celsius);
+    fahr = fahr + step;
+  }
+  return 0;
+}
+cat: can't open not_exist

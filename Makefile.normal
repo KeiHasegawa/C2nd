@@ -226,7 +226,7 @@ test149.log:test149.exe
 	$(DOGV) $(RUN) ./$< 0 $(basename $<).c > $@
 	$(DOGV) $(RUN) ./$< 1 <$(basename $<).c >> $@
 	$(DOGV) $(RUN) ./$< 2 2>> $@
-	dos2unix.csh $@
+	$(DOS2UNIX) $@
 
 test000.lof:test000.log
 test000.exe:test000.s

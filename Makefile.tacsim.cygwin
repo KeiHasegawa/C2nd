@@ -700,10 +700,10 @@ test150_gcc.exe:test150.c
 	gcc -g -o $@ $<
 
 test150.log:test150.i
-	$(DOGV) $(CC1) $< $(CC1_FLAG) --generator-option \( --arg \[ $< ../20_hcc1 ] \) > test150.log
+	$(DOGV) --alarm 300 $(CC1) $< $(CC1_FLAG) --generator-option \( --arg \[ $< ../20_hcc1 ] \) > test150.log
 
 test150_gcc.log:test150_gcc.exe
-	$(DOGV) $(RUN) ./$< ../20_hcc1 > $@
+	$(DOGV) --alarm 300 $(RUN) ./$< ../20_hcc1 > $@
 
 test150.lof:test150.log test150_gcc.log
 	$(DOGV) $(DIFF) $(basename $@).log $(basename $@)_gcc.log 

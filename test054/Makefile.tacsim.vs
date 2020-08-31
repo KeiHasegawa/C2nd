@@ -15,9 +15,12 @@ CPP_FLAG = -D_MSCVER \
 -D__fastcall= \
 -W 0
 else
-CPP_FLAG = -D_MSCVER \
+CPP_FLAG = \
+$(EXTRA_CPP_FLAG_TACSIM_VS) \
+-D_MSC_VER \
 -U_M_IX86 \
 -D_M_X64 \
+-D_WIN64 \
 -D__int64='long long' \
 -D__cdecl= \
 -D__pragma='\#pragma' \

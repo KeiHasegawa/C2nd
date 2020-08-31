@@ -5,15 +5,20 @@ int bufp = 0;         /* buf ’†‚ÌŸ‚Ì‹ó‚«ˆÊ’u */
 
 #ifdef __cplusplus
 extern "C" {
-#endif // __cplusplus
+#ifdef _MSCVER
+inline int printf(const char* const, ...);
+#else // _MSC_VER
+extern int printf(const char*, ...);
+#endif // _MSC_VER
+extern int getchar();
+}
+#else // __cplusplus
 #ifdef _MSCVER
 extern int printf(const char* const, ...);
 #else // _MSC_VER
 extern int printf(const char*, ...);
 #endif // _MSC_VER
 extern int getchar();
-#ifdef __cplusplus
-}
 #endif // __cplusplus
 
 int getch(void)  /* (‰Ÿ‚µ–ß‚³‚ê‚½‰Â”\«‚à‚ ‚é) 1 •¶š‚ğ‚Æ‚Á‚Ä‚­‚é */

@@ -6,7 +6,7 @@ int bufp = 0;         /* buf ’†‚ÌŽŸ‚Ì‹ó‚«ˆÊ’u */
 #ifdef __cplusplus
 extern "C" {
 #ifdef _MSC_VER
-inline int printf(const char* const, ...);
+extern int printf(const char* const, ...);
 #else // _MSC_VER
 extern int printf(const char*, ...);
 #endif // _MSC_VER

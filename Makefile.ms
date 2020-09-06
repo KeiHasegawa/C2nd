@@ -42,7 +42,8 @@ CC1_FLAG = --generator-option \( --debug --ms --x86 \)
 else
 CC1_FLAG = --generator-option \( --debug --ms \)
 endif
-LINK = vs_wrapper
+LINK_CMD = vs_wrapper
+LINK_CMD2 = $(LINK_CMD)
 RUN =
 
 DOGV = wdog.exe -v
@@ -54,7 +55,7 @@ DOGV = wdog.exe -v
 	$(DOGV) $(CC1) -o $@ $< $(CC1_FLAG)
 
 %.exe : %.asm
-	$(DOGV) $(LINK) -o $@ $<
+	$(DOGV) $(LINK_CMD) -o $@ $<
 
 %.log : %.exe
 	$(DOGV) $(RUN) ./$< > $@
@@ -139,26 +140,44 @@ test095.log:test095.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).c > $@
 	$(DOS2UNIX) $@
 
+test102.exe:test102.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+	
 test102.log:test102.exe
 	$(DOGV) $(RUN) ./$< aaa bbb ccc > $@
 	$(DOS2UNIX) $@
+
+test103.exe:test103.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test103.log:test103.exe
 	$(DOGV) $(RUN) ./$< ddd eee fff > $@
 	$(DOS2UNIX) $@
 
+test104.exe:test103.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+
 test104.log:test104.exe
 	$(DOGV) $(RUN) ./$< ggg hhh iii > $@
 	$(DOS2UNIX) $@
+
+test105.exe:test105.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test105.log:test105.exe
 	$(DOGV) $(RUN) ./$< int < $(basename $<).c > $@
 	$(DOS2UNIX) $@
 
+test106.exe:test106.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+
 test106.log:test106.exe
 	$(DOGV) $(RUN) ./$< -n int < $(basename $<).c > $@
 	$(DOGV) $(RUN) ./$< -x -n = < $(basename $<).c >> $@
 	$(DOS2UNIX) $@
+
+test107.exe:test107.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test107.log:test107.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
@@ -168,6 +187,9 @@ test107.log:test107.exe
 test108.log:test108.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
 	$(DOS2UNIX) $@
+
+test109.exe:test109.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test109.log:test109.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
@@ -205,11 +227,17 @@ test139.log:test139.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
 	$(DOS2UNIX) $@
 
+test140.exe:test140.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+
 test140.log:test140.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).c > $@
 	$(DOGV) $(RUN) ./$< test000.c test001.c test002.c >> $@
 	-$(DOG) $(RUN) ./$< not_exist >> $@
 	$(DOS2UNIX) $@
+
+test141.exe:test141.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test141.log:test141.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).c > $@
@@ -237,14 +265,23 @@ test146.log:test146.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).c > $@
 	$(DOS2UNIX) $@
 
+test147.exe:test147.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+
 test147.log:test147.exe
 	$(DOGV) $(RUN) ./$< $(basename $<).c $@
 	-$(DOG) $(RUN) ./$< $(basename $<).c 2>> $@
 	$(DOS2UNIX) $@
 
+test148.exe:test148.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
+
 test148.log:test148.exe
 	$(DOGV) $(RUN) ./$< $(basename $<).c > $@
 	$(DOS2UNIX) $@
+
+test149.exe:test149.asm
+	$(DOGV) $(LINK_CMD2) -o $@ $<
 
 test149.log:test149.exe
 	$(DOGV) $(RUN) ./$< 0 $(basename $<).c > $@

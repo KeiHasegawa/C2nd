@@ -8,6 +8,7 @@ all:ok.log
 
 DIFF = diff
 TOUCH = touch
+DOGV = wdog.exe -v
 DOS2UNIX = dos2unix.csh
 
 CPP=hcpp.exe

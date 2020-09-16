@@ -1,29 +1,8 @@
-#define BUFSIZE 100
+#include <stdio.h>
 
+#define BUFSIZE 100
 char buf[BUFSIZE];    /* ungetch 用のバッファ */
 int bufp = 0;         /* buf 中の次の空き位置 */
-
-#if 0  // change 2020.09.16 09:54
-#ifdef __cplusplus
-extern "C" {
-#ifdef _MSC_VER
-inline int printf(const char* const, ...);
-#else // _MSC_VER
-extern int printf(const char*, ...);
-#endif // _MSC_VER
-extern int getchar();
-}
-#else // __cplusplus
-#ifdef _MSC_VER
-extern int printf(const char* const, ...);
-#else // _MSC_VER
-extern int printf(const char*, ...);
-#endif // _MSC_VER
-extern int getchar();
-#endif // __cplusplus
-#else  // change 2020.09.16 09:54
-#include <stdio.h>
-#endif  // change 2020.09.16 09:54
 
 int getch(void)  /* (押し戻された可能性もある) 1 文字をとってくる */
 {

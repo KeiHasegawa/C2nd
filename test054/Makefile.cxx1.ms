@@ -55,7 +55,7 @@ calc.exe:$(ASMS)
 else
 calc.exe:$(ASMS)
 	$(DOGV) MSBuild.exe calcxx.vcxproj '/p:Configuration=Debug;Platform=x64' /t:Rebuild
-	mv x64/Debug/calc.exe .
+	mv x64/Debug/calcxx.exe calc.exe
 endif
 
 %.i : %.c

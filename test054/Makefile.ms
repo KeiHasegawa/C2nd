@@ -50,11 +50,11 @@ endif
 
 ifeq ($(INTEL_DLL_EXTRA_OPTION),--x86)
 calc.exe:$(ASMS)
-	$(DOGV) MSBuild.exe '/p:Configuration=Debug;Platform=x86' /t:Rebuild
+	$(DOGV) MSBuild.exe calc.vcxproj '/p:Configuration=Debug;Platform=x86' /t:Rebuild
 	mv x64/Debug/calc.exe .
 else
 calc.exe:$(ASMS)
-	$(DOGV) MSBuild.exe '/p:Configuration=Debug;Platform=x64' /t:Rebuild
+	$(DOGV) MSBuild.exe calc.vcxproj '/p:Configuration=Debug;Platform=x64' /t:Rebuild
 	mv x64/Debug/calc.exe .
 endif
 

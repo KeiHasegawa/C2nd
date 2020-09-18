@@ -1,6 +1,6 @@
 int _test_main();
 
-int main(int argc, char** argv)
+int main()
 {
-  return _test_main(argc, argv);
+  return _test_main();
 }

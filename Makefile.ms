@@ -188,9 +188,6 @@ test108.log:test108.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
 	$(DOS2UNIX) $@
 
-test109.exe:test109.asm
-	$(DOGV) $(LINK_CMD2) -o $@ $<
-
 test109.log:test109.exe
 	$(DOGV) $(RUN) ./$< < $(basename $<).data > $@
 	$(DOS2UNIX) $@

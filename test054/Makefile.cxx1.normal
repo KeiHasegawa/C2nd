@@ -1,0 +1,68 @@
+TESTS = $(wildcard *.data)
+LOFS = $(TESTS:.data=.lof)
+CPP = hcpp.exe
+CPP_FLAG = $(EXTRA_CPP_FLAG) \
+-D__declspec\(a\)= -D__cdecl= -D__inline__=inline -D__extension__= \
+-D__attribute__\(a\)= -D__builtin_va_list='char*' \
+-D__builtin_stdarg_start=__builtin_va_start -D__asm__\(a\)= -W 0 -H
+
+CC1 = hcc1.exe
+CC1_FLAG = --generator-option \( --debug \)
+#CC1 = gcc -S
+DIFF = diff
+DOS2UNIX = dos2unix.csh
+TOUCH = touch
+DOGV = wdog.exe -v
+
+SRCS = getch.c getop.c main.c stack.c
+GENS = $(SRCS:.c=.s)
+
+all:ok.log
+
+calc.exe:$(OBJS)
+	$(DOGV)  gcc -o $@ $(GENS)
+
+%.i : %.c
+	$(DOGV) $(CPP) -o $@ $< $(CPP_FLAG)
+
+%.s : %.i
+	$(DOGV) $(CC1) -o $@ $< $(CC1_FLAG)
+
+%.log:%.data
+	$(DOGV) ./calc.exe < $< > $@
+	$(DOGV) $(DOS2UNIX) $@
+
+%.lof:%.log
+	$(DOGV) $(DIFF) $< $@
+	$(TOUCH) $@
+
+ok.log:$(LOFS)
+	ls $(LOFS) > $@
+	$(DOS2UNIX) $@
+	$(TOUCH) $@
+
+clean:
+	$(RM) *.i *.s *.asm *.exe *.log a.c *~
+	$(RM) -r .vs x64 Debug Release
+
+calc.exe:getch.s getop.s main.s stack.s
+
+getch.s:getch.i
+getop.s:getop.i
+main.s:main.i
+stack.s:stack.i
+
+test000.lof:test000.log
+test000.log:calc.exe
+test001.lof:test001.log
+test001.log:calc.exe
+test002.lof:test002.log
+test002.log:calc.exe
+test003.lof:test003.log
+test003.log:calc.exe
+test004.lof:test004.log
+test004.log:calc.exe
+test005.lof:test005.log
+test005.log:calc.exe
+test006.lof:test006.log
+test006.log:calc.exe

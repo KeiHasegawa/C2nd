@@ -19,6 +19,7 @@ CPP_FLAG = -D_MSC_VER \
 -D__declspec\(a\)= \
 -D__inline=inline \
 -D__fastcall= \
+-D_WCHAR_T_DEFINED \
 -W 0
 else
 CPP_FLAG = \

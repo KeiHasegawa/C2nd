@@ -8,7 +8,9 @@ all:$(LOFS) test054/ok.log
 
 CPP=hcpp.exe
 ifeq ($(BATCH_BUILD_VS_X86),1)
-CPP_FLAG = -D_MSC_VER \
+CPP_FLAG = \
+$(EXTRA_CPP_FLAG_TACSIM_VS) \
+-D_MSC_VER \
 -D_M_IX86 \
 -DWIN32 \
 -U_WIN64 \
@@ -19,7 +21,6 @@ CPP_FLAG = -D_MSC_VER \
 -D__declspec\(a\)= \
 -D__inline=inline \
 -D__fastcall= \
--D_WCHAR_T_DEFINED \
 -W 0
 else
 CPP_FLAG = \

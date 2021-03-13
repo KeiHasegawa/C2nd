@@ -1,5 +1,9 @@
 /* strlen: s ‚Ì’·‚³‚ð•Ô‚· */
+#ifdef __cplusplus
+int strlen(const char s[])
+#else
 int strlen(char s[])
+#endif
 {
   int i;
 

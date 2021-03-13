@@ -1,5 +1,5 @@
 /* atoi: s ‚ğ®”‚É•ÏŠ·‚·‚é */
-int atoi(char s[])
+int atoi(const char s[])
 {
   int i, n;
 

@@ -1,5 +1,5 @@
 /* strcpy: t を s にコピーする ; 配列添字版 */
-void strcpy(char *s, char *t)
+void strcpy(char *s, const char *t)
 {
   int i;
 
@@ -14,7 +14,7 @@ int main(void)
 {
   char a[100];
 
-  char* b = "kei hasegawa";
+  const char* b = "kei hasegawa";
   strcpy(a,b);
   printf("%s\n",a);
   return 0;

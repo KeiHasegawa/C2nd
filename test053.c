@@ -1,7 +1,7 @@
 /* Atoi: Atof ‚ğg‚Á‚Ä•¶š—ñ s ‚ğ®”‚É•ÏŠ·‚·‚é */
-int Atoi(char s[])
+int Atoi(const char s[])
 {
-  double Atof(char s[]);
+  double Atof(const char s[]);
 
   return (int) Atof(s);
 }
@@ -9,7 +9,7 @@ int Atoi(char s[])
 #include <ctype.h>
 
 /* Atof: •¶š—ñ s ‚ğ double ‚É•ÏŠ·‚·‚é */
-double Atof(char s[])
+double Atof(const char s[])
 {
   double val, power;
   int i, sign;

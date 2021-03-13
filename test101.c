@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void f(char *a[])
+void f(const char *a[])
 {
   int i;
 
@@ -18,7 +18,7 @@ void g(char (*a)[15])
 
 int main(void)
 {
-  char *name[] = { "Illegal month", "Jan", "Feb", "Mar" };
+  const char *name[] = { "Illegal month", "Jan", "Feb", "Mar" };
   char aname[][15] = { "Illegal month", "Jan", "Feb", "Mar" };
 
   f(name);

@@ -1,7 +1,7 @@
 /* month_name: n ”Ô–Ú‚ÌŒŽ‚Ì–¼‘O‚ð•Ô‚· */
-char* month_name(int n)
+const char* month_name(int n)
 {
-  static char *name[] = {
+  static const char *name[] = {
     "Illegal month",
     "January", "February", "March",
     "April", "May", "June",

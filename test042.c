@@ -1,7 +1,7 @@
 #include <ctype.h>
 
 /* atoi: s ‚ğ®”‚É•ÏŠ·‚·‚é; ‘æ2”Å */
-int atoi(char s[])
+int atoi(const char s[])
 {
   int i, n, sign;
 

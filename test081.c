@@ -1,5 +1,5 @@
 /* strlen: •¶Žš—ñ s ‚Ì’·‚³‚ð•Ô‚· */
-int strlen(char *s)
+int strlen(const char *s)
 {
   int n;
 
@@ -13,7 +13,7 @@ int strlen(char *s)
 int main(void)
 {
   char array[] = "kei hasegawa";
-  char *ptr = "dragon book";
+  const char *ptr = "dragon book";
 
   printf("%d\n", strlen("hello, world"));
   printf("%d\n", strlen(array));

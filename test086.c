@@ -2,7 +2,7 @@
 
 void f(void)
 {
-  char *pmessage;
+  const char *pmessage;
   pmessage = "now is the time";
   printf("%s\n",pmessage);
 }
@@ -10,7 +10,7 @@ void f(void)
 void g(void)
 {
   char amessage[] = "now is the time";
-  char *pmessage = "now is the time";
+  const char *pmessage = "now is the time";
 
   printf("%s %s\n", &amessage[0], pmessage);
 
@@ -22,7 +22,7 @@ void g(void)
 
 int main(void)
 {
-  char* p = "I am a string";
+  const char* p = "I am a string";
 
   printf("%s\n",p);
   printf("hello, world\n");

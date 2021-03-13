@@ -4,7 +4,7 @@
 #define MAXWORD 100
 
 struct key {
-  char *word;
+  const char *word;
   int count;
 } keytab[] = {
   "auto", 0,

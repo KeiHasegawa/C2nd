@@ -4,7 +4,7 @@
 #include "syscalls.h"
 #define PERMS 0666		/* 所有者, グループ, 他人に対して RW */
 
-void error(char *,...);
+void error(const char *,...);
 
 #ifdef _MSC_VER
 #include <sys/stat.h>
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 #include <stdarg.h>
 
 /* error: エラー・メッセージを印字して死ぬ */
-void error(char *fmt, ...)
+void error(const char *fmt, ...)
 {
   va_list args;
 

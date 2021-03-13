@@ -44,7 +44,7 @@ void closedir(DIR*);
 #endif // _MSC_VER
 #include <assert.h>
 
-void fsize(char *);
+void fsize(const char *);
 
 /* ファイルの大きさを印字する */
 int main(int argc, char* argv[])
@@ -57,10 +57,10 @@ int main(int argc, char* argv[])
   return 0;
 }
 
-void dirwalk(char *, void (*fcn)(char *));
+void dirwalk(const char *, void (*fcn)(const char *));
 
 /* fsize: ファイル "name" のサイズを印字する */
-void fsize(char *name)
+void fsize(const char *name)
 {
   struct stat stbuf;
   if (stat(name, (struct stat*)&stbuf) == -1) {
@@ -74,7 +74,7 @@ void fsize(char *name)
 }
 
 /* dirwalk: dir 中のすべてのファイルに fcn を適用する */
-void dirwalk(char *dir, void (*fcn)(char *))
+void dirwalk(const char *dir, void (*fcn)(const char *))
 {
   char name[FILENAME_MAX];
   struct dirent *dp;

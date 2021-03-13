@@ -5,13 +5,13 @@
 enum { INT, FLOAT, STRING };
 
 struct {
-  char *name;
+  const char *name;
   int flags;
   int utype;
   union {
     int ival;
     float fval;
-    char *sval;
+    const char *sval;
   } u;
 } symtab[NSYM];
 

@@ -1,7 +1,7 @@
 union u_tag {
   int ival;
   float fval;
-  char* sval;
+  const char* sval;
 };
 
 enum type { INT, FLOAT, STRING };

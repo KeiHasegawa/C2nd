@@ -2,10 +2,10 @@
 #include <stdarg.h>
 
 /* minprintf: 可変な引数リストをもつ最小の printf */
-void minprintf(char *fmt, ...)
+void minprintf(const char *fmt, ...)
 {
   va_list ap;	/* 各名なし引数を順々に指す */
-  char *p, *sval;
+  const char *p, *sval;
   int ival;
   double dval;
 

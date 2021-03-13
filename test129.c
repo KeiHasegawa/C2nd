@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /* strcmp: s<t なら <0, s==t なら 0, s>t なら >0 を返す */
-int mystrcmp(char* s, char *t)
+int mystrcmp(const char* s, const char *t)
 {
   int i;
 
@@ -12,7 +12,7 @@ int mystrcmp(char* s, char *t)
   return s[i] - t[i];
 }
 
-int mynumcmp(char *s1, char *s2)
+int mynumcmp(const char *s1, const char *s2)
 {
   double v1, v2;
 
@@ -26,7 +26,7 @@ int mynumcmp(char *s1, char *s2)
     return 0;
 }
 
-typedef int (*PFI)(char *, char *);
+typedef int (*PFI)(const char *, const char *);
 
 int main(void)
 {

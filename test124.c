@@ -3,7 +3,7 @@
 #include <string.h>
 
 struct key {
-  char *word;
+  const char *word;
   int count;
 } keytab[] = {
   "auto", 0,

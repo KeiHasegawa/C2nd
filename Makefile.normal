@@ -698,7 +698,7 @@ test150.exe:test150.s
 test150.s:test150.i
 
 test150_gcc.exe:test150.c
-	gcc -g -o $@ $<
+	$(DOGV) gcc -g -o $@ $<
 
 test150.log:test150.exe
 	$(DOGV) --alarm 300 $(RUN) ./$< ../20_hcc1 > test150.log

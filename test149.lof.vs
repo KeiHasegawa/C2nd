@@ -69,7 +69,7 @@ extern int atoi(const char*);
 #endif
 
 /* fopen: ファイルを開いて, ファイルポインタを返す */
-FILE* fopen(char *name, char *mode)
+FILE* fopen(char *name, const char *mode)
 {
   int fd;
   FILE *fp;
@@ -314,7 +314,7 @@ extern int atoi(const char*);
 #endif
 
 /* fopen: ファイルを開いて, ファイルポインタを返す */
-FILE* fopen(char *name, char *mode)
+FILE* fopen(char *name, const char *mode)
 {
   int fd;
   FILE *fp;

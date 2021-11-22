@@ -8,12 +8,12 @@ TOUCH = touch
 DOGV = wdog.exe -v
 
 SRCS = getch.c getop.c main.c stack.c
-GENS = $(SRCS:.c=.s)
+GENS = $(SRCS:.c=.o)
 
 all:ok.log
 
 calc.exe:$(OBJS)
-	$(DOGV)  gcc -o $@ $(GENS)
+	$(DOGV) gcc -o $@ $(GENS)
 
 %.o : %.c
 	$(DOGV) $(CC) -o $@ $< -c
@@ -35,12 +35,12 @@ clean:
 	$(RM) *.i *.s *.asm *.exe *.log a.c *~
 	$(RM) -r .vs x64 Debug Release
 
-calc.exe:getch.s getop.s main.s stack.s
+calc.exe:getch.o getop.o main.o stack.o
 
-getch.s:getch.i
-getop.s:getop.i
-main.s:main.i
-stack.s:stack.i
+getch.o:getch.c
+getop.o:getop.c
+main.o:main.c
+stack.o:stack.c
 
 test000.lof:test000.log
 test000.log:calc.exe

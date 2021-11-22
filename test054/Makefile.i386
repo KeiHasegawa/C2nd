@@ -32,7 +32,7 @@ ok.log:$(LOFS)
 	$(TOUCH) $@
 
 clean:
-	$(RM) *.i *.s *.asm *.exe *.log a.c *~
+	$(RM) *.i *.s *.asm *.exe *.log a.c *.o *~
 	$(RM) -r .vs x64 Debug Release
 
 calc.exe:getch.o getop.o main.o stack.o
